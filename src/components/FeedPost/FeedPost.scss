@@ -1,0 +1,44 @@
+.feedpost {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__heading {
+    font-size: 25px;
+  }
+
+  &__img {
+    border: 1px solid yellow;
+    width: 500px;
+    height: 500px;
+  }
+  &__interaction-icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__interaction-icon {
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        color: #ffff00;
+        transition: all 0.5s ease;
+      }
+  
+      &:active {
+        scale: 110%;
+        transition: all 0.1s ease;
+      }
+  }
+
+
+  &__show-link {
+    padding-top: 10px;
+    color: aliceblue;
+  }
+}

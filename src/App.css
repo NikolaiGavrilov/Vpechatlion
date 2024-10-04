@@ -1,0 +1,4 @@
+.container {
+  padding-left: calc(50% - 800px);
+  padding-right: calc(50% - 800px);
+}

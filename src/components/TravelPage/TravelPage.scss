@@ -1,0 +1,114 @@
+.main-page {
+  height: 3800px;
+  background: url("img/main-bg.png") no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.main-welcome {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    font-size: 150px;
+    font-weight: 700;
+    background-image: url("img/travel-heading-bg.png");
+    background-position: center;
+    background-size: 600px;
+    background-repeat: repeat;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__left {
+    height: 500px;
+    border-radius: 150px 250px;
+  }
+
+  &__right {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-size: 30px;
+    padding: 50px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: #e1e3e6;
+  }
+}
+
+.train-window {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 130px 250px;
+}
+
+.person {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 500px;
+  height: 500px;
+  z-index: 1;
+  border-radius: 130px 250px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230%;
+  height: 60%;
+  background-image: url("img/travel-windowview.png");
+  background-size: cover;
+  animation: moveBackground 3s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+.travel-feed {
+  margin-top: 50px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: #e1e3e6;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 10px;
+  }
+
+  &__heading {
+    font-size: 35px;
+    padding-bottom: 30px;
+  }
+}
