@@ -1,5 +1,5 @@
 .main-page {
-  min-height: 50dvh;
+  min-height: 100dvh;
   background: url("img/main-bg.png") no-repeat;
   background-position: top;
   background-repeat: no-repeat;
@@ -15,7 +15,6 @@
   align-items: center;
 
   &__heading {
-    padding-bottom: 50px;
     font-size: 150px;
     font-weight: 700;
     background-image: url("img/travel-heading-bg.png");
@@ -34,7 +33,7 @@
   }
 
   &__left {
-    height: 500px;
+    max-height: 500px;
     border-radius: 150px 250px;
   }
 
@@ -89,7 +88,6 @@
 }
 
 .travel-feed {
-  margin-top: 50px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -100,17 +98,34 @@
   color: #e1e3e6;
 
   &__content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 10px;
   }
 
   &__heading {
-    font-size: 35px;
+    font-size: 50px;
     padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-welcome__heading {
+    font-size: 80px;
+  }
+
+  .main-welcome__right {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .travel-feed__heading {
+    font-size: 28px;
+  }
+
+  .train-window {
+    width: 100%;
+    height: auto;
   }
 }

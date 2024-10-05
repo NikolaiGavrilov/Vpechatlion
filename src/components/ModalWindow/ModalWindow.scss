@@ -1,0 +1,81 @@
+.modal-window {
+  box-sizing: border-box;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  max-width: 100%;
+  max-height: 80%;
+  overflow: auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__img {
+    margin-left: 20px;
+    width: 100%;
+    border: 1px solid white;
+  }
+
+  &__close {
+    float: right;
+    color: red; /* Яркий красный цвет крестика */
+    font-size: 54px; /* Размер крестика */
+    cursor: pointer; /* Указатель на курсор при наведении */
+  }
+  &__heading {
+    font-size: 50px;
+  }
+
+  &__description {
+    padding-top: 20px;
+    font-size: 30px;
+  }
+
+  &__likes-number {
+    font-size: 35px;
+    color: #ffff00;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    width: 400px;
+    height: 100px;
+  }
+}
+
+.comments-list {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .comment__author {
+    font-weight: bold;
+  }
+  
+  .comment__author-text {
+    margin-left: 10px;
+  }

@@ -1,4 +1,6 @@
 .feedpost {
+  max-width: 100%;
+  min-width: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   display: flex;
@@ -8,13 +10,17 @@
   flex-wrap: wrap;
 
   &__heading {
-    font-size: 25px;
+    font-size: 20px;
     padding-bottom: 15px;
+    cursor: pointer;
   }
 
   &__img {
     border: 1px solid white;
-    max-width: 450px;
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    cursor: pointer;
   }
 
   &__preview-text {
@@ -30,6 +36,7 @@
   &__interaction-icon {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 
     &:hover {
       color: #ffff00;
@@ -53,6 +60,4 @@
     align-items: center;
     gap: 5px;
   }
-
-  
 }
