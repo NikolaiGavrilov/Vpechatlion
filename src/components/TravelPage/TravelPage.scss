@@ -1,19 +1,21 @@
 .main-page {
-  height: 3800px;
+  min-height: 50dvw;
   background: url("img/main-bg.png") no-repeat;
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .main-welcome {
   padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   &__heading {
+    padding-bottom: 50px;
     font-size: 150px;
     font-weight: 700;
     background-image: url("img/travel-heading-bg.png");
@@ -88,7 +90,7 @@
 
 .travel-feed {
   margin-top: 50px;
-  padding: 50px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

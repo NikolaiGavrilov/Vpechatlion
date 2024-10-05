@@ -1,14 +1,14 @@
 .header {
   position: fixed;
   margin: 0;
-
   min-width: 100dvw;
   background-color: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
 
   &__logo {
     display: flex;

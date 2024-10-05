@@ -1,30 +1,60 @@
 import "./FeedPost.scss";
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleLike } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
-const FeedPost = ({ children }) => {
+const FeedPost = ({
+  id,
+  title,
+  imgPath,
+  description,
+  likes,
+  youLiked,
+  path,
+}) => {
+  const dispatch = useDispatch();
+  const post = useSelector((state) =>
+    state.posts.find((post) => post.id === id)
+  );
+
+  const toggleIsLiked = () => {
+    dispatch(toggleLike(id));
+  };
+
   return (
-    <div className="feedpost">
-      <h1 className="feedpost__heading">Заголовок</h1>
-      <div className="feedpost__img"></div>
-      <p className="feedpost__preview">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, iusto.
-      </p>
-      <div className="feedpost__interaction-icons">
-        <img
-          className="feedpost__interaction-icon"
-          src="img/comment.svg"
-          alt=""
-        />
-        <img
-          className="feedpost__interaction-icon"
-          src="img/like-empty.svg"
-          alt=""
-        />
-        <a className="feedpost__show-link" href="#">
-          Впечатлиться полностью
-        </a>
+    <Link to={path} className="feedpost__link">
+      <div className="feedpost">
+        <h1 className="feedpost__heading">{title}</h1>
+        <img className="feedpost__img" src={imgPath[0]} alt="" />
+        <p className="feedpost__preview-text">{description}</p>
+        <div className="feedpost__interaction-icons">
+          <div className="feedpost__likes-number">
+            <span>{likes}</span>
+            {youLiked ? (
+              <img
+                onClick={toggleIsLiked}
+                className="feedpost__interaction-icon"
+                src="img/like-added.svg"
+                alt=""
+              />
+            ) : (
+              <img
+                onClick={toggleIsLiked}
+                className="feedpost__interaction-icon"
+                src="img/like-empty.svg"
+                alt=""
+              />
+            )}
+          </div>
+          <img
+            className="feedpost__interaction-icon"
+            src="img/comment.svg"
+            alt=""
+          />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

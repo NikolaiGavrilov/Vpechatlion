@@ -1,12 +1,26 @@
 .footer {
-  position: inherit;
-  margin: -100px;
   height: 100px;
+
   min-width: 100dvw;
-  background-color: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  &__contacts {
+    font-size: 25x;
+  }
+
+  &__networks-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
 }

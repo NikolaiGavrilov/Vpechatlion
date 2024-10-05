@@ -9,14 +9,20 @@
 
   &__heading {
     font-size: 25px;
+    padding-bottom: 15px;
   }
 
   &__img {
-    border: 1px solid yellow;
-    width: 500px;
-    height: 500px;
+    border: 1px solid white;
+    max-width: 450px;
   }
+
+  &__preview-text {
+    padding-top: 15px;
+  }
+
   &__interaction-icons {
+    padding-top: 15px;
     display: flex;
     gap: 20px;
   }
@@ -26,19 +32,27 @@
     height: 30px;
 
     &:hover {
-        color: #ffff00;
-        transition: all 0.5s ease;
-      }
+      color: #ffff00;
+      transition: all 0.5s ease;
+    }
+
+    &:active {
+      scale: 110%;
+      transition: all 0.1s ease;
+    }
+  }
+  &__link:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.02);
+    border: 1px solid white;
+  }
+
+  &__likes-number {
+    color: #ffff00;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
   
-      &:active {
-        scale: 110%;
-        transition: all 0.1s ease;
-      }
-  }
-
-
-  &__show-link {
-    padding-top: 10px;
-    color: aliceblue;
-  }
 }
