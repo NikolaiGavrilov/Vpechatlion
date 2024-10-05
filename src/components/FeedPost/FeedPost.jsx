@@ -1,8 +1,8 @@
 import "./FeedPost.scss";
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleLike } from "../../redux/actions";
 import { Link } from "react-router-dom";
+import DetailedPost from "../DetailedPost/DetailedPost";
 
 const FeedPost = ({
   id,
@@ -11,7 +11,6 @@ const FeedPost = ({
   description,
   likes,
   youLiked,
-  path,
 }) => {
   const dispatch = useDispatch();
   const post = useSelector((state) =>
@@ -23,10 +22,15 @@ const FeedPost = ({
   };
 
   return (
-    <Link to={path} className="feedpost__link">
+    
+    <div className="feedpost__link">
       <div className="feedpost">
-        <h1 className="feedpost__heading">{title}</h1>
-        <img className="feedpost__img" src={imgPath[0]} alt="" />
+        <Link to={`/posts/${post.id}`} style={{ color: "white" }}>
+          <h1 className="feedpost__heading">{title}</h1>
+        </Link>
+        <Link to={`/posts/${post.id}`}>
+          <img className="feedpost__img" src={imgPath[0]} alt="" />
+        </Link>
         <p className="feedpost__preview-text">{description}</p>
         <div className="feedpost__interaction-icons">
           <div className="feedpost__likes-number">
@@ -47,14 +51,16 @@ const FeedPost = ({
               />
             )}
           </div>
-          <img
-            className="feedpost__interaction-icon"
-            src="img/comment.svg"
-            alt=""
-          />
+          <Link to={`/posts/${post.id}`}>
+            <img
+              className="feedpost__interaction-icon"
+              src="img/comment.svg"
+              alt=""
+            />
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

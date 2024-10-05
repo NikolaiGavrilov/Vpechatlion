@@ -1,24 +1,43 @@
-import "./DetailedPost.scss";
 import { useSelector } from "react-redux";
-import React from "react";
-import { useParams } from "react-router-dom";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import "./DetailedPost.scss";
 
-const DetailedPost = () => {
-  const { id } = useParams(); // Получаем id из параметров
-  const post = useSelector((state) =>
-    state.posts.find((post) => post.id === parseInt(id)) // Преобразуем id в число
-  );
+const DetailedPost = ({ idToShow }) => {
+  const posts = useSelector((state) => state.posts);
+  let postArrElem;
+  Object.entries(posts).forEach((element) => {
+    if (element[0] === String(idToShow - 1)) {
+      // console.log(typeof element[0]);
+      // console.log(typeof idToShow);
+      postArrElem = element;
+    }
+  });
+  // console.log(postArrElem);
+  const post = postArrElem[1];
+  const imgPath = post.imgPath;
 
   return (
-    <>
-      <section>
-        <h1>{post.title}</h1> {/* Используйте post.title вместо post.heading */}
-        <p>{post.description}</p>
-        {post.imgPath.map((postImg, index) => (
-          <img key={index} src={postImg} alt="" /> // Добавлено key для картинок
-        ))}
-      </section>
-    </>
+    <div>
+      <Header />
+      <div className="container">
+        <section className="detailed-post">
+          <div className="detailed-post__content">
+            <h1 className="detailed-post__title">{post.title}</h1>
+            <p className="detailed-post__description">{post.description}</p>
+            {imgPath.map((image, index) => (
+              <img
+                className="detailed-post__image"
+                key={index}
+                src={image}
+                alt={`фото${index + 1}`}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </div>
   );
 };
 

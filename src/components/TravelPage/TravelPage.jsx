@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+
 import "./TravelPage.scss";
 import Header from "../Header/Header";
 import FeedPost from "../FeedPost/FeedPost";
 import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
-
 
 const TravelPage = () => {
   const posts = useSelector((state) => state.posts);
@@ -38,19 +37,17 @@ const TravelPage = () => {
           <section className="travel-feed">
             <h2 className="travel-feed__heading">Лента впечатлений</h2>
             <div className="travel-feed__content">
-              
-                  {posts.map((post) => (
-                    <FeedPost
-                    id={post.id}
-                    title={post.title}
-                    imgPath={post.imgPath}
-                    description={post.description}
-                    likes={post.likes}
-                    youLiked={post.youLiked}
-                    path = {post.path}
-                  />
-                  ))}
-               
+              {posts.map((post) => (
+                <FeedPost
+                  id={post.id}
+                  key={post.id}
+                  title={post.title}
+                  imgPath={post.imgPath}
+                  description={post.description}
+                  likes={post.likes}
+                  youLiked={post.youLiked}
+                />
+              ))}
             </div>
           </section>
         </div>
