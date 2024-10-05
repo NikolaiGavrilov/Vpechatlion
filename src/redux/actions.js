@@ -1,4 +1,11 @@
 //Экшены для постов
+export const UPDATE_POST = "UPDATE_POST";
+
+export const updatePost = (post) => ({
+    type: UPDATE_POST,
+    payload: post,
+});
+
 export const ADD_POST = 'ADD_POST';
 
 export const addPost = (post) => ({

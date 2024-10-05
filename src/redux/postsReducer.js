@@ -1,4 +1,4 @@
-import { ADD_POST, TOGGLE_LIKE } from "./actions";
+import { ADD_POST, TOGGLE_LIKE, UPDATE_POST } from "./actions";
 
 const initialState = {
     posts: [
@@ -11,7 +11,7 @@ const initialState = {
             likes: 35,
             youLiked: false,
             path: "/posts/1",
-            commentIDs: [],
+            commentIDs: [1728166961303, 1728167078109],
         },
         {
             id: 2,
@@ -21,7 +21,7 @@ const initialState = {
             likes: 20,
             youLiked: false,
             path: "/posts/2",
-            commentIDs: [],
+            commentIDs: [1728167078110],
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ const initialState = {
             likes: 17,
             youLiked: false,
             path: "/posts/3",
-            commentIDs: [],
+            commentIDs: [1728167078121],
         },
         {
             id: 4,
@@ -41,7 +41,7 @@ const initialState = {
             likes: 15,
             youLiked: false,
             path: "/posts/4",
-            commentIDs: [],
+            commentIDs: [1728167926053],
         },
         {
             id: 5,
@@ -51,7 +51,7 @@ const initialState = {
             likes: 55,
             youLiked: false,
             path: "/posts/5",
-            commentIDs: [],
+            commentIDs: [1728167905110],
         },
         {
             id: 6,
@@ -61,7 +61,7 @@ const initialState = {
             likes: 13,
             youLiked: false,
             path: "/posts/6",
-            commentIDs: [],
+            commentIDs: [1728167880533, 1728167848581],
         },
         {
             id: 7,
@@ -76,7 +76,7 @@ const initialState = {
             likes: 29,
             youLiked: false,
             path: "/posts/7",
-            commentIDs: [],
+            commentIDs: [1728167825685, 1728167794310],
         },
         {
             id: 8,
@@ -86,7 +86,7 @@ const initialState = {
             likes: 33,
             youLiked: false,
             path: "/posts/8",
-            commentIDs: [],
+            commentIDs: [1728167775174],
         },
         {
             id: 9,
@@ -96,7 +96,7 @@ const initialState = {
             likes: 9,
             youLiked: false,
             path: "/posts/9",
-            commentIDs: [],
+            commentIDs: [1728167755550],
         },
         {
             id: 10,
@@ -106,13 +106,80 @@ const initialState = {
             likes: 67,
             youLiked: false,
             path: "/posts/10",
-            commentIDs: [],
+            commentIDs: [1728167728097],
         },
-    ],
+    ], comments:  [{
+        id: 1728166961303,
+        postId: 1,
+        text: "Вау! Сразу туда захотелось!",
+    }, {
+        id: 1728167078109,
+        postId: 1,
+        text: "А море холодное?",
+    }, {
+        id: 1728167078110,
+        postId: 2,
+        text: "Уютный домик, у меня тоже дача есть))",
+    }, {
+        id: 1728167078121,
+        postId: 3,
+        text: "Ваау! Какие милые!",
+    }, {
+        id: 1728167926053,
+        postId: 4,
+        text: "Что сказать... Есть, чему поучиться",
+    }, {
+        id: 1728167905110,
+        postId: 5,
+        text: "А это платно или бесплатно?",
+    },
+    {
+        id: 1728167880533,
+        postId: 6,
+        text: "Боюсь летать на самолётах, но вид завораживающий",
+    },
+    {
+        id: 1728167848581,
+        postId: 6,
+        text: "Трдельники там что надо!",
+    },
+    {
+        id: 1728167825685,
+        postId: 7,
+        text: "А если б этот дядя вас обратно не забрал?",
+    }
+        ,
+    {
+        id: 1728167794310,
+        postId: 7,
+        text: "Кто не рискует, тот не пьет шампанское =)",
+    },
+    {
+        id: 1728167775174,
+        postId: 8,
+        text: "А море как, тёплое? Хочется тоже в жаркие страны податься, да вот только работа...",
+    },
+    {
+        id: 1728167755550,
+        postId: 9,
+        text: "Отличное место, чтобы послать на 9 букв =)",
+    },
+    {
+        id: 1728167728097,
+        postId: 10,
+        text: "Волга просто роскошная!",
+    }]
 };
 
 const postsReducer = (state = initialState, action) => {
     switch (action.type) {
+        case UPDATE_POST:
+            return {
+                ...state,
+                posts: state.posts.map(post =>
+                    post.id === action.payload.id ? action.payload : post
+                ),
+            };
         case ADD_POST:
             return {
                 ...state,

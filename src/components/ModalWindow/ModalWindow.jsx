@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addComment } from "../../redux/actions";
 import "./ModalWindow.scss";
 
 const ModalWindow = ({
@@ -8,11 +10,19 @@ const ModalWindow = ({
   description,
   likes,
   youLiked,
+  commentIDs,
   openModal,
   closeModal,
   toggleIsLiked,
 }) => {
-  const [comments, setComments] = useState([]);
+  const dispatch = useDispatch();
+  const comments = useSelector((state) => state.comments.comments);
+  const state = useSelector((state) => state); // Получаем все состояние
+  console.log(state); // Выводим состояние в консоль
+  const post = useSelector((state) =>
+    state.posts.posts.find((post) => post.id === id)
+  );
+
   const [newComment, setNewComment] = useState("");
 
   const handleCommentChange = (e) => {
@@ -22,7 +32,19 @@ const ModalWindow = ({
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (newComment.trim()) {
-      setComments([...comments, newComment]);
+      const commentData = {
+        id: Date.now(),
+        postId: id,
+        text: newComment,
+      };
+      dispatch(addComment(commentData));
+      // Обновите commentIDs в состоянии постов
+      const updatedPost = {
+        ...post,
+        commentIDs: [...post.commentIDs, commentData.id],
+      };
+      // Отправьте экшен для обновления поста (нужен соответствующий экшен и редюсер)
+      // dispatch(updatePost(updatedPost));
       setNewComment("");
     }
   };
@@ -60,12 +82,14 @@ const ModalWindow = ({
             <button type="submit">Добавить комментарий</button>
           </form>
           <div className="comments-list">
-            {comments.map((comment, index) => (
-              <div key={index} className="comment">
-                <p className="comment__author">Автор</p>
-                <p className="comment__author-text">{comment}</p>
-              </div>
-            ))}
+            {comments
+              .filter((comment) => comment.postId === id)
+              .map((comment) => (
+                <div key={comment.id} className="comment">
+                  <p className="comment__author">Автор</p>
+                  <p className="comment__author-text">{comment.text}</p>
+                </div>
+              ))}
           </div>
         </div>
       </div>

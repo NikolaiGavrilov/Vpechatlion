@@ -1,4 +1,3 @@
-
 import "./TravelPage.scss";
 import Header from "../Header/Header";
 import FeedPost from "../FeedPost/FeedPost";
@@ -6,11 +5,11 @@ import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 
 const TravelPage = () => {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts); // Извлекаем массив постов
+
   return (
     <>
       <Header />
-
       <div className="main-page">
         <div className="container">
           <section className="main-welcome">
@@ -46,13 +45,13 @@ const TravelPage = () => {
                   description={post.description}
                   likes={post.likes}
                   youLiked={post.youLiked}
+                  commentIDs={post.commentIDs}
                 />
               ))}
             </div>
           </section>
         </div>
       </div>
-
       <Footer />
     </>
   );

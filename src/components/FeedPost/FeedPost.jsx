@@ -4,10 +4,18 @@ import { toggleLike } from "../../redux/actions";
 import React, { useState } from "react";
 import ModalWindow from "../ModalWindow/ModalWindow";
 
-const FeedPost = ({ id, title, imgPath, description, likes, youLiked }) => {
+const FeedPost = ({
+  id,
+  title,
+  imgPath,
+  description,
+  likes,
+  youLiked,
+  commentIDs,
+}) => {
   const dispatch = useDispatch();
   const post = useSelector((state) =>
-    state.posts.find((post) => post.id === id)
+    state.posts.posts.find((post) => post.id === id)
   );
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -57,12 +65,15 @@ const FeedPost = ({ id, title, imgPath, description, likes, youLiked }) => {
             />
           )}
         </div>
-        <img
-          className="feedpost__interaction-icon"
-          src="img/comment.svg"
-          alt=""
-          onClick={openModal}
-        />
+        <div className="feedpost__comments-number">
+          <img
+            className="feedpost__interaction-icon"
+            src="img/comment.svg"
+            alt=""
+            onClick={openModal}
+          />
+          <span>{commentIDs.length}</span>
+        </div>
       </div>
 
       {isModalOpen && (
