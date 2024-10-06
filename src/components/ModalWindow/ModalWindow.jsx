@@ -17,8 +17,8 @@ const ModalWindow = ({
 }) => {
   const dispatch = useDispatch();
   const comments = useSelector((state) => state.comments.comments);
-  const state = useSelector((state) => state); // Получаем все состояние
-  console.log(state); // Выводим состояние в консоль
+  const state = useSelector((state) => state); 
+  console.log(state); 
   const post = useSelector((state) =>
     state.posts.posts.find((post) => post.id === id)
   );
@@ -38,13 +38,10 @@ const ModalWindow = ({
         text: newComment,
       };
       dispatch(addComment(commentData));
-      // Обновите commentIDs в состоянии постов
       const updatedPost = {
         ...post,
         commentIDs: [...post.commentIDs, commentData.id],
       };
-      // Отправьте экшен для обновления поста (нужен соответствующий экшен и редюсер)
-      // dispatch(updatePost(updatedPost));
       setNewComment("");
     }
   };

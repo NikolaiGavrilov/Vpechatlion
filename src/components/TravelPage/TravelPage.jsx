@@ -1,11 +1,12 @@
 import "./TravelPage.scss";
 import Header from "../Header/Header";
-import FeedPost from "../FeedPost/FeedPost";
+// import FeedPost from "../FeedPost/FeedPost";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import Feed from "../Feed/Feed";
 
 const TravelPage = () => {
-  const posts = useSelector((state) => state.posts.posts); // Извлекаем массив постов
+  // Извлекаем массив постов
 
   return (
     <>
@@ -33,9 +34,11 @@ const TravelPage = () => {
               </div>
             </div>
           </section>
-          <section className="travel-feed">
-            <h2 className="travel-feed__heading">Лента впечатлений</h2>
-            <div className="travel-feed__content">
+          <Feed category='Travel'/>
+          {/* <section className="feed">
+            <div className="feed__box">
+            <h2 className="feed__heading">Лента впечатлений</h2>
+            <div className="feed__content">
               {posts.map((post) => (
                 <FeedPost
                   id={post.id}
@@ -49,7 +52,9 @@ const TravelPage = () => {
                 />
               ))}
             </div>
-          </section>
+            </div>
+          </section> */}
+
         </div>
       </div>
       <Footer />

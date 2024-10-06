@@ -30,20 +30,36 @@
   &__close {
     float: right;
     color: red; /* Яркий красный цвет крестика */
-    font-size: 54px; /* Размер крестика */
+    font-size: 64px; /* Размер крестика */
     cursor: pointer; /* Указатель на курсор при наведении */
   }
   &__heading {
-    font-size: 50px;
+    font-size: 32px;
   }
 
   &__description {
     padding-top: 20px;
-    font-size: 30px;
+    font-size: 32px;
+  }
+
+  &__interaction-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffff00;
+      transition: all 0.5s ease;
+    }
+
+    &:active {
+      transform: scale(1.2);
+      transition: all 0.1s ease;
+    }
   }
 
   &__likes-number {
-    font-size: 35px;
+    font-size: 32px;
     color: #ffff00;
     display: flex;
     align-items: center;
@@ -62,20 +78,20 @@
 }
 
 .comments-list {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .comment {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .comment__author {
-    font-weight: bold;
-  }
-  
-  .comment__author-text {
-    margin-left: 10px;
-  }
+  margin-top: 20px;
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.comment__author {
+  font-weight: bold;
+}
+
+.comment__author-text {
+  margin-left: 10px;
+}
