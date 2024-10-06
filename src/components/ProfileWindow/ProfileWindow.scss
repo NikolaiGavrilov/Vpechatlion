@@ -24,14 +24,25 @@
   }
 
   &__close {
+    position: sticky;
     float: right;
     color: red;
     font-size: 64px;
     cursor: pointer;
+    z-index: 1003;
   }
-
+  &__username {
+    font-size: 32px;
+    color: $decorationColor;
+  }
   &__avatar {
     width: 400px;
     height: 400px;
+  }
+  &__coloured {
+    color: $decorationColor;
+  }
+  &__description {
+    display: block;
   }
 }
