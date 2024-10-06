@@ -1,3 +1,4 @@
+@import "../../_variables.scss";
 .main-page {
   min-height: 100dvh;
   background: url("img/main-bg.png") no-repeat;
@@ -44,9 +45,9 @@
     font-size: 32px;
     padding: 50px;
     display: block;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $backgroundColorDark;
     border-radius: 20px;
-    color: #e1e3e6;
+    color: $mainTextColor;
   }
 }
 

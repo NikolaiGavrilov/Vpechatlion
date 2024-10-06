@@ -1,3 +1,5 @@
+@import "../../_variables.scss";
+
 .header {
   position: fixed;
   margin: 0;
@@ -9,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: $backgroundColorDark;
   z-index: 1000;
   gap: 30px;
 
@@ -27,7 +29,7 @@
   &__heading {
     font-weight: 900;
     text-transform: uppercase;
-    color: rgb(255, 255, 255);
+    color: $mainTextColor;
   }
 
   &__nav {
@@ -37,12 +39,12 @@
   }
 
   &__link {
-    color: #e1e3e6;
+    color: $mainTextColor;
     font-size: 16px;
     font-weight: 700;
 
     &:hover {
-      color: yellow;
+      color: $decorationColor;
       transition: all 0.5s ease;
     }
 
@@ -60,6 +62,5 @@
       padding: 10px 0;
       align-items: center;
     }
-
   }
 }

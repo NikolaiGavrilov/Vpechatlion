@@ -19,6 +19,7 @@ const FeedPost = ({
   );
 
   const [isModalOpen, setModalOpen] = useState(false);
+  const [commentsAmount, setCommentsAmount] = useState(post.commentIDs.length);
 
   const toggleIsLiked = () => {
     dispatch(toggleLike(id));
@@ -30,6 +31,10 @@ const FeedPost = ({
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const updateCommentsAmount = (newAmount) => {
+    setCommentsAmount(newAmount);
   };
 
   return (
@@ -72,7 +77,7 @@ const FeedPost = ({
             alt=""
             onClick={openModal}
           />
-          <span>{commentIDs.length}</span>
+          <span>{commentsAmount}</span>
         </div>
       </div>
 
@@ -87,6 +92,7 @@ const FeedPost = ({
           openModal={openModal}
           closeModal={closeModal}
           toggleIsLiked={toggleIsLiked}
+          updateCommentsAmount={updateCommentsAmount}
         />
       )}
     </div>

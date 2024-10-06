@@ -2,7 +2,7 @@
 
 .feedpost {
   width: 380px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: $backgroundColorLight;
   border-radius: 20px;
   padding: 10px;
   display: flex;
@@ -11,10 +11,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   transition: border 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 
   &:hover {
-    border: 2px solid white;
+    border: 1px solid $mainTextColor;
   }
 
   &__heading {
@@ -23,14 +23,14 @@
     cursor: pointer;
 
     &:hover {
-      color: #ffff00;
+      color: $decorationColor;
     }
   }
 
   &__img {
     width: 350px;
     height: 350px;
-    border: 1px solid white;
+    border: 1px solid $mainTextColor;
     object-fit: cover;
     cursor: pointer;
     margin: 10px 0;
@@ -58,7 +58,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #ffff00;
+      color: $decorationColor;
       transition: all 0.5s ease;
     }
 
@@ -69,14 +69,14 @@
   }
 
   &__likes-number {
-    color: #ffff00;
+    color: $decorationColor;
     display: flex;
     align-items: center;
     gap: 5px;
   }
 
   &__comments-number {
-    color: #ffff00;
+    color: $decorationColor;
     display: flex;
     align-items: center;
     gap: 10px;

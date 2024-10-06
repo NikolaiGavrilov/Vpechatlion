@@ -1,5 +1,17 @@
+$mainTextColor: #ededed;
 $decorationColor: #ffff00;
+$backgroundColorDark: rgba(0, 0, 0, 0.9);
+$backgroundColorLight: rgba(255, 255, 255, 0.1);
+$commentFieldColor: rgb(38, 38, 38);
+
+$siteWidth: 1280px;
 
 :export {
+  mainTextColor: $mainTextColor;
   decorationColor: $decorationColor;
+  backgroundColorDark: $backgroundColorDark;
+  backgroundColorLight: $backgroundColorLight;
+  commentFieldColor: $commentFieldColor;
+
+  siteWidth: $siteWidth;
 }

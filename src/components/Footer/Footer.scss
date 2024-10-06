@@ -1,3 +1,4 @@
+@import "../../_variables.scss";
 .footer {
   height: 100px;
 
@@ -6,8 +7,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
+  background-color: $backgroundColorDark;
+  color: $mainTextColor;
 
   &__contacts {
     font-size: 25x;

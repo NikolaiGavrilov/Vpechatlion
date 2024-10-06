@@ -1,27 +1,28 @@
+@import "../../_variables.scss";
 .feed {
-    padding-bottom: 100px;
-  
-    &__box {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 20px;
-      color: #e1e3e6;
-    }
-    &__content {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-    }
-  
-    &__heading {
-      font-size: 32px;
-      padding-bottom: 30px;
-    }
+  padding-bottom: 100px;
+
+  &__box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $backgroundColorDark;
+    border-radius: 20px;
+    color: $mainTextColor;
   }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  &__heading {
+    font-size: 32px;
+    padding-bottom: 20px;
+  }
+}
