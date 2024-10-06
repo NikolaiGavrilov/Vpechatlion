@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../redux/actions";
 import "./ModalWindow.scss";
+import { Link } from "react-router-dom";
+import ProfileWindow from "../ProfileWindow/ProfileWindow";
 
 const ModalWindow = ({
   id,
@@ -17,15 +19,33 @@ const ModalWindow = ({
   updateCommentsAmount,
 }) => {
   const dispatch = useDispatch();
+
   const comments = useSelector((state) => state.comments.comments);
   const users = useSelector((state) => state.users.users);
   const post = useSelector((state) =>
     state.posts.posts.find((post) => post.id === id)
   );
+
   const [newComment, setNewComment] = useState("");
   const [commentsAmount, setCommentsAmount] = useState(
     post.commentIDs.length + 1
   );
+  const [isProfileWindowOpen, setProfileWindowOpen] = useState(false);
+
+  const openProfileWindow = () => {
+    setProfileWindowOpen(true);
+  };
+
+  const closeProfileWindow = () => {
+    setProfileWindowOpen(false);
+  };
+
+  const [selectedProfileId, setSelectedProfileId] = useState(null);
+
+  const handleProfileClick = (userID) => {
+    setSelectedProfileId(userID); // сохраняем ID профиля
+    setProfileWindowOpen(true); // открываем окно профиля
+  };
 
   const handleCommentChange = (e) => {
     setNewComment(e.target.value);
@@ -51,10 +71,12 @@ const ModalWindow = ({
 
   const getUserByPostId = () => {
     const user = users.find((user) => user.userPosts.includes(id));
-    return user ? user : {
-      username: "Неизвестный мимокрокодил",
-      avatar: "img/users-img/unknown.png",
-    };
+    return user
+      ? user
+      : {
+          username: "Неизвестный мимокрокодил",
+          avatar: "img/users-img/unknown.png",
+        };
   };
 
   return (
@@ -64,11 +86,21 @@ const ModalWindow = ({
       </span>
       <div className="modal-window__content">
         <h1 className="modal-window__heading">{title}</h1>
-        {getUserByPostId() && 
-        <div className="modal-window__post-author">
-          <img className="modal-window__author-pic"src={getUserByPostId().avatar} alt="" />
-          <h2 className="modal-window__author-name">{getUserByPostId().username}</h2>
-          </div>}
+        {getUserByPostId() && (
+          <div
+            className="modal-window__post-author"
+            onClick={() => handleProfileClick(getUserByPostId().userID)}
+          >
+            <img
+              className="modal-window__author-pic"
+              src={getUserByPostId().avatar}
+              alt=""
+            />
+            <h2 className="modal-window__author-name">
+              {getUserByPostId().username}
+            </h2>
+          </div>
+        )}
         <p>Всего изображений: {imgPath.length}</p>
         {imgPath.map((img, index) => (
           <img className="modal-window__img" key={index} src={img} alt="" />
@@ -100,7 +132,13 @@ const ModalWindow = ({
             {comments
               .filter((comment) => comment.postId === id)
               .map((comment) => (
-                <div className="comment__flex">
+                <div
+                  className="comment__flex"
+                  key={getUserByCommentId(comment.id).userID}
+                  onClick={() =>
+                    handleProfileClick(getUserByCommentId(comment.id).userID)
+                  }
+                >
                   <img
                     className="comment__avatar"
                     src={getUserByCommentId(comment.id).avatar}
@@ -120,6 +158,7 @@ const ModalWindow = ({
           </div>
         </div>
       </div>
+      {isProfileWindowOpen && <ProfileWindow profileID={selectedProfileId} setProfileWindowOpen={setProfileWindowOpen} />}
     </div>
   );
 };
