@@ -1,0 +1,61 @@
+@import "../../_variables.scss";
+.my-profile {
+  min-height: 100dvh;
+  background: url("img/main-bg.jpg") no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  //   box-sizing: border-box;
+  //   padding: 20px;
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   background: $backgroundColorDark;
+  //   border: 1px solid transparent;
+  //   border-radius: 20px;
+  //   box-shadow: 0 2px 10px $backgroundColorDark;
+  //   z-index: 1001;
+  //   max-width: 100%;
+  //   max-height: 80%;
+  //   overflow: auto;
+  &__info {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  &__content {
+    background-color: $backgroundColorDark;
+    color: $mainTextColor;
+    padding: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__close {
+    position: sticky;
+    float: right;
+    color: red;
+    font-size: 64px;
+    cursor: pointer;
+    z-index: 1003;
+  }
+  &__username {
+    font-size: 32px;
+    color: $decorationColor;
+  }
+  &__avatar {
+    width: 400px;
+    height: 400px;
+  }
+  &__coloured {
+    color: $decorationColor;
+  }
+  &__description {
+    display: block;
+  }
+}

@@ -12,7 +12,7 @@ const Header = () => {
   const avatar = currentUser ? currentUser.avatar : "";
 
   const logOut = () => {
-    dispatch(logout());  
+    dispatch(logout());
   };
 
   return (
@@ -47,10 +47,21 @@ const Header = () => {
             Aвторизоваться
           </Link>
         ) : (
-          <div className="header__user-info">
-            <span className="header__username">{currentUser.username}</span>
-            <img src={avatar} alt="Avatar" className="header__avatar" />
-            <Link to="/" onClick={logOut} className="header__link">
+          <div>
+            <div className="header__user-info">
+              <Link to="/myprofile">
+                <span className="header__username">{currentUser.username}</span>
+              </Link>
+              <Link to="/myprofile">
+                <img src={avatar} alt="Avatar" className="header__avatar" />
+              </Link>
+            </div>
+            <Link
+              to="/"
+              onClick={logOut}
+              className="header__link"
+              style={{ color: "red" }}
+            >
               Выйти
             </Link>
           </div>

@@ -45,7 +45,6 @@ const ProfileWindow = ({ profileID, setProfileWindowOpen }) => {
         <ul>
           {user.userPosts && user.userPosts.length > 0 ? (
             user.userPosts.map((postId) => {
-              // Находим пост по postId
               const post = posts.find((p) => p.id === postId);
               return post ? (
                 <li key={post.id}>
