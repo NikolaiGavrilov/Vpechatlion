@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../redux/actions";
 import "./ModalWindow.scss";
-import { Link } from "react-router-dom";
 import ProfileWindow from "../ProfileWindow/ProfileWindow";
-
 const ModalWindow = ({
   id,
   title,
@@ -19,7 +17,6 @@ const ModalWindow = ({
   updateCommentsAmount,
 }) => {
   const dispatch = useDispatch();
-
   const comments = useSelector((state) => state.comments.comments);
   const users = useSelector((state) => state.users.users);
   const post = useSelector((state) =>
@@ -43,8 +40,8 @@ const ModalWindow = ({
   const [selectedProfileId, setSelectedProfileId] = useState(null);
 
   const handleProfileClick = (userID) => {
-    setSelectedProfileId(userID); // сохраняем ID профиля
-    setProfileWindowOpen(true); // открываем окно профиля
+    setSelectedProfileId(userID); 
+    setProfileWindowOpen(true); 
   };
 
   const handleCommentChange = (e) => {
@@ -158,7 +155,12 @@ const ModalWindow = ({
           </div>
         </div>
       </div>
-      {isProfileWindowOpen && <ProfileWindow profileID={selectedProfileId} setProfileWindowOpen={setProfileWindowOpen} />}
+      {isProfileWindowOpen && (
+        <ProfileWindow
+          profileID={selectedProfileId}
+          setProfileWindowOpen={setProfileWindowOpen}
+        />
+      )}
     </div>
   );
 };

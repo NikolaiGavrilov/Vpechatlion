@@ -39,7 +39,9 @@ const ProfileWindow = ({ profileID, setProfileWindowOpen }) => {
         <p className="user-profile__description">
           Кол-во отзывов на впечатления: {user.userComments.length}
         </p>
-        <p className="user-profile__description">Список опубликованных впечатлений:</p>
+        <p className="user-profile__description">
+          Список опубликованных впечатлений:
+        </p>
         <ul>
           {user.userPosts && user.userPosts.length > 0 ? (
             user.userPosts.map((postId) => {

@@ -14,7 +14,7 @@ const TravelPage = () => {
       <div className="main-page">
         <div className="container">
           <section className="main-welcome">
-            <h1 className="main-welcome__heading">Путешествия</h1>
+            <h1 className="main-welcome__heading">Путешествия и места</h1>
             <div className="main-welcome__description">
               <div className="main-welvoce_left">
                 <div className="train-window">
@@ -34,7 +34,7 @@ const TravelPage = () => {
               </div>
             </div>
           </section>
-          <Feed category='Travel'/>
+          <Feed category="Travel" />
           {/* <section className="feed">
             <div className="feed__box">
             <h2 className="feed__heading">Лента впечатлений</h2>
@@ -54,7 +54,6 @@ const TravelPage = () => {
             </div>
             </div>
           </section> */}
-
         </div>
       </div>
       <Footer />

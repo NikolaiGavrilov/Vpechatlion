@@ -1,7 +1,7 @@
 @import "../../_variables.scss";
 .main-page {
   min-height: 100dvh;
-  background: url("img/main-bg.png") no-repeat;
+  background: url("img/travel-bg.jpg") no-repeat;
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -18,13 +18,14 @@
   &__heading {
     font-size: 120px;
     font-weight: 700;
-    background-image: url("img/travel-heading-bg.png");
+    background-image: url("img/travel-heading-bg.jpg");
     background-position: center;
-    background-size: 720px;
+    background-size: 1200px;
     background-repeat: repeat;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   &__description {
