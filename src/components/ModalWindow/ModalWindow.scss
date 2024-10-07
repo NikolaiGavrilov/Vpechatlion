@@ -133,7 +133,7 @@
     flex-direction: column;
     margin-bottom: 10px;
     background-color: $backgroundColorLight;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 30px;
     position: relative;
   }
@@ -151,6 +151,7 @@
   &__author {
     color: $decorationColor;
     font-weight: bold;
+    word-wrap: break-word;
   }
 
   &__author-text {

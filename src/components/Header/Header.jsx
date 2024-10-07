@@ -1,8 +1,20 @@
-import { Children } from "react";
-import "./Header.scss";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../redux/actions";
+import "./Header.scss";
 
-const Header = ({ children }) => {
+const Header = () => {
+  const dispatch = useDispatch();
+  const { loggedIn, userID } = useSelector((state) => state.loggedIn);
+  const users = useSelector((state) => state.users.users);
+  const currentUser = users.find((user) => user.userID === userID);
+  const avatar = currentUser ? currentUser.avatar : "";
+
+  const logOut = () => {
+    dispatch(logout());  
+  };
+
   return (
     <header className="header">
       <Link to="/" className="header__logo">
@@ -18,15 +30,31 @@ const Header = ({ children }) => {
       </Link>
 
       <nav className="header__nav">
-        <Link to="/travel" href="#" className="header__link">
-          Путешествия и места
+        <Link to="/travel" className="header__link">
+          Путешествия
+          <br /> и места
         </Link>
-        <Link to="/culinary" href="#" className="header__link">
-          Еда и кулинария
+        <Link to="/culinary" className="header__link">
+          Кулинария
+          <br /> и еда
         </Link>
-        <a href="#" className="header__link">
+        <Link to="/creativity" className="header__link">
           Творчество
-        </a>
+          <br /> и хобби
+        </Link>
+        {!loggedIn ? (
+          <Link to="/login" className="header__link">
+            Aвторизоваться
+          </Link>
+        ) : (
+          <div className="header__user-info">
+            <span className="header__username">{currentUser.username}</span>
+            <img src={avatar} alt="Avatar" className="header__avatar" />
+            <Link to="/" onClick={logOut} className="header__link">
+              Выйти
+            </Link>
+          </div>
+        )}
       </nav>
     </header>
   );

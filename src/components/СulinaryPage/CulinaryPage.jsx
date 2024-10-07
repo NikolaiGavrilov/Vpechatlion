@@ -11,7 +11,7 @@ const CulinaryPage = () => {
       <div className="culinary-page">
         <div className="container">
           <section className="culinary-page__welcome">
-            <h1 className="culinary-page__heading">Еда и кулинария</h1>
+            <h1 className="culinary-page__heading">Кулинария и еда</h1>
             <div className="culinary-page__description">
               <div className="culinary-page__right">
                 Кулинария — это уникальное искусство, способное вызывать яркие

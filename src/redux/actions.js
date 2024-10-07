@@ -47,3 +47,13 @@ export const removeUser = (userID) => ({
     type: REMOVE_USER,
     payload: userID,
 });
+
+//Экшены для входа в состояние зарегистрированного пользователя (залогиниться) и выхода из него
+export const login = (userID) => ({
+    type: 'LOGIN',
+    payload: { userID },
+  });
+  
+  export const logout = () => ({
+    type: 'LOGOUT',
+  });

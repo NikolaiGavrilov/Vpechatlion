@@ -34,8 +34,10 @@
 
   &__nav {
     padding-left: 0;
-    gap: 10px;
+    gap: 20px;
     display: flex;
+    text-align: center;
+    align-items: center;
   }
 
   &__link {
@@ -52,6 +54,18 @@
       scale: 110%;
       transition: all 0.1s ease;
     }
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__username {
+    color: $decorationColor;
+  }
+  &__avatar {
+    max-height: 80px;
+    border-radius: 50px;
   }
 }
 

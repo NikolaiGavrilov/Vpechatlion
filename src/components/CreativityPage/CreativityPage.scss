@@ -1,0 +1,54 @@
+@import "../../_variables.scss";
+
+.creativity-page {
+  min-height: 100dvh;
+  background: url("img/creativity-bg.jpg") no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  &__welcome {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 120px;
+    font-weight: 700;
+    background-image: url("img/culinary-heading-bg.jpg");
+    background-position: center;
+    background-size: 400px;
+    background-repeat: repeat;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  &__description {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__left {
+    max-height: 500px;
+    border-radius: 150px 250px;
+  }
+
+  &__right {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 32px;
+    padding: 50px;
+    display: block;
+    background-color: $backgroundColorDark;
+    border-radius: 20px;
+    color: $mainTextColor;
+  }
+}

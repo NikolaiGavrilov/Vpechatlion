@@ -3,6 +3,7 @@
   padding-bottom: 100px;
 
   &__box {
+    position: relative;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -24,6 +25,29 @@
   &__heading {
     font-size: 32px;
     padding-bottom: 20px;
+  }
+
+  &__sorting-btn {
+    position: absolute;
+    left: 4%;
+    top: 2%;
+    font-size: 16px;
+    background-color: $backgroundColorLight;
+    border: 1px solid $mainTextColor;
+    border-radius: 10px;
+    margin: 0px 10px;
+    padding: 10px;
+  }
+
+  &__sorting-text {
+    color: $mainTextColor;
+  }
+
+  &__sorting-btn:active {
+    border: 1px solid $decorationColor;
+    .feed__sorting-text {
+      color: $decorationColor;
+    }
   }
 
   &__pagination {

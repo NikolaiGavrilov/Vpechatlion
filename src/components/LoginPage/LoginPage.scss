@@ -1,0 +1,25 @@
+@import "../../_variables.scss";
+.login-page {
+  min-height: 100dvh;
+  background: url("img/main-bg.jpg") no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  &__content {
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__form {
+    padding: 50px;
+    text-align: center;
+    background-color: $backgroundColorDark;
+    color: $mainTextColor;
+    border-radius: 20px;
+  }
+}
