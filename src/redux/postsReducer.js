@@ -1,4 +1,4 @@
-import { ADD_POST, TOGGLE_LIKE, UPDATE_POST } from "./actions";
+import { ADD_POST, TOGGLE_LIKE, UPDATE_POST, DELETE_POST } from "./actions";
 
 const initialState = {
     posts: [
@@ -404,6 +404,11 @@ const postsReducer = (state = initialState, action) => {
                         }
                         : post
                 ),
+            };
+        case DELETE_POST:
+            return {
+                ...state,
+                posts: state.posts.filter(post => post.id !== action.payload),
             };
         default:
             return state;

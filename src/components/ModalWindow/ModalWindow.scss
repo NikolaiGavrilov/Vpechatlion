@@ -104,15 +104,31 @@
     word-wrap: break-word;
   }
 
-  &__button {
+  &__add-comment-button {
     width: 200px;
     height: 40px;
+    font-size: 16px;
+    background-color: $backgroundColorLight;
+    border: 1px solid $mainTextColor;
+    border-radius: 10px;
+    margin: 0px 10px;
+    padding: 10px;
+  }
+
+  &__add-comment-button-text {
+    color: $mainTextColor;
+  }
+
+  &__add-comment-button:active {
+    border: 1px solid $decorationColor;
+    .modal-window__add-comment-button-text {
+      color: $decorationColor;
+    }
   }
 }
 
 .comments-list {
   margin-top: 20px;
-
   width: 100%;
 }
 
@@ -128,7 +144,7 @@
   }
 
   &__field {
-    max-width: 70%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -155,7 +171,9 @@
   }
 
   &__author-text {
+    word-wrap: break-word;
     padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   &__avatar {

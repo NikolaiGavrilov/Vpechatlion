@@ -20,6 +20,13 @@ export const toggleLike = (id) => ({
     payload: id,
 });
 
+export const DELETE_POST = 'DELETE_POST';
+
+export const deletePost = (id) => ({
+    type: DELETE_POST,
+    payload: id,
+});
+
 //Экшены для комментов
 export const ADD_COMMENT = "ADD_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
@@ -52,8 +59,8 @@ export const removeUser = (userID) => ({
 export const login = (userID) => ({
     type: 'LOGIN',
     payload: { userID },
-  });
-  
-  export const logout = () => ({
+});
+
+export const logout = () => ({
     type: 'LOGOUT',
-  });
+});

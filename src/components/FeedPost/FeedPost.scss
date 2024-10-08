@@ -81,4 +81,15 @@
     align-items: center;
     gap: 10px;
   }
+
+  &__delete-button {
+    width: 30px;
+    background-color: none;
+    cursor: pointer;
+
+    &__comment {
+      padding-top: 10px;
+      width: 10px;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import "./FeedPost.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleLike } from "../../redux/actions";
+import { toggleLike, deletePost } from "../../redux/actions";
 import React, { useState } from "react";
 import ModalWindow from "../ModalWindow/ModalWindow";
 
@@ -17,6 +17,9 @@ const FeedPost = ({
   const post = useSelector((state) =>
     state.posts.posts.find((post) => post.id === id)
   );
+  const { loggedIn, userID } = useSelector((state) => state.loggedIn);
+  const users = useSelector((state) => state.users.users);
+  const currentUser = users.find((user) => user.userID === userID);
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [commentsAmount, setCommentsAmount] = useState(post.commentIDs.length);
@@ -37,6 +40,12 @@ const FeedPost = ({
     setCommentsAmount(newAmount);
   };
 
+  const handleDeletePost = () => {
+    dispatch(deletePost(id));
+  };
+
+  const isCurrentUserAuthor = currentUser?.userPosts?.includes(post.id);
+
   return (
     <div className="feedpost">
       <div className="feedpost__heading" onClick={openModal}>
@@ -54,21 +63,12 @@ const FeedPost = ({
       <div className="feedpost__interaction-icons">
         <div className="feedpost__likes-number">
           <span>{likes}</span>
-          {youLiked ? (
-            <img
-              onClick={toggleIsLiked}
-              className="feedpost__interaction-icon"
-              src="img/like-added.svg"
-              alt=""
-            />
-          ) : (
-            <img
-              onClick={toggleIsLiked}
-              className="feedpost__interaction-icon"
-              src="img/like-empty.svg"
-              alt=""
-            />
-          )}
+          <img
+            onClick={toggleIsLiked}
+            className="feedpost__interaction-icon"
+            src={youLiked ? "img/like-added.svg" : "img/like-empty.svg"}
+            alt=""
+          />
         </div>
         <div className="feedpost__comments-number">
           <img
@@ -79,6 +79,14 @@ const FeedPost = ({
           />
           <span>{commentsAmount}</span>
         </div>
+        {isCurrentUserAuthor && (
+          <img
+            className="feedpost__delete-button"
+            src="img/delete-icon.svg"
+            alt="иконка корзины"
+            onClick={handleDeletePost}
+          />
+        )}
       </div>
 
       {isModalOpen && (

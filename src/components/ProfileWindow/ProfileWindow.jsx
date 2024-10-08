@@ -51,7 +51,7 @@ const ProfileWindow = ({ profileID, setProfileWindowOpen }) => {
                   <span className="user-profile__coloured">{post.title}</span>
                 </li>
               ) : (
-                <li key={postId}>Пост {postId} не обнаружен.</li>
+                <li key={postId}>Пост №{postId} не обнаружен и вероятно был удалён.</li>
               );
             })
           ) : (

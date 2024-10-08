@@ -45,7 +45,7 @@ const MyProfilePage = ({ user }) => {
                         </span>
                       </li>
                     ) : (
-                      <li key={postId}>Пост {postId} не обнаружен.</li>
+                      <li key={postId}>Пост №{postId} не обнаружен и вероятно был удалён.</li>
                     );
                   })
                 ) : (

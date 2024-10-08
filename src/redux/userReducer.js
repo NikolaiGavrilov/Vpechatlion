@@ -35,7 +35,7 @@ const initialUserState = {
         avatar: "img/users-img/user4.png",
         userDescription: "Между нами тает лёд, пусть теперь нас никто не найдёт. Мы промокнем под дождём, и сегодня мы только вдвоём.",
         userPosts: [12, 19, 29],
-        userComments: [1728297774999, 1728299064872, 1728302268035, 1728302268659, 1728308291129, 1728309022064],
+        userComments: [1728297774999, 1728299064872, 1728302268035, 1728308291129, 1728309022064],
     },
     {
         userID: "8cd80280-587c-441f-bf9b-dfb2f97de339",
@@ -44,7 +44,7 @@ const initialUserState = {
         password: "JustD0It",
         userDescription: "Очень люблю активные виды отдыха и иногда позволяю себе полакомиться бургером",
         userPosts: [15, 21, 27],
-        userComments: [1728297858480, 1728298049575, 1728298850100, 1728300451010, 1728308598488],
+        userComments: [1728297858480, 1728298049575, 1728298850100, 1728300451010, 1728308598488, 1728302268659],
     },
     {
         userID: "a5a91f25-1efe-4db2-aeaa-a6438156d9d0",
@@ -62,7 +62,7 @@ const userReducer = (state = initialUserState, action) => {
     switch (action.type) {
         case ADD_USER:
             const newUser = {
-                userID: uuidv4(), // Генерация уникального ID
+                userID: uuidv4(),
                 username: action.payload.username,
                 avatar: action.payload.avatar,
                 userDescription: action.payload.userDescription,
