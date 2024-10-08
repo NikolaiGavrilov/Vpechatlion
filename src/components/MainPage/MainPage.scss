@@ -1,0 +1,194 @@
+@import "../../_variables.scss";
+.main-page {
+  min-height: 100dvh;
+  background: url("img/main-bg.jpg") no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  &__heading {
+    padding-top: 100px;
+    font-size: 80px;
+    font-weight: 700;
+    background-image: url("img/travel-heading-bg.jpg");
+    background-position: center;
+    background-size: 1200px;
+    background-repeat: repeat;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  &__welcome {
+    margin-top: 250px;
+    margin-bottom: 50px;
+    font-size: 32px;
+    padding: 50px;
+    display: block;
+    background-color: $backgroundColorDark;
+    border-radius: 20px;
+    color: $mainTextColor;
+    text-align: center;
+  }
+
+  &__categories {
+    display: grid;
+
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 500px 200px;
+  }
+
+  &__category-pic {
+    width: 700px;
+    height: 700px;
+
+    transition: transform 2s ease;
+    &:hover {
+      .main-page__category-name {
+        color: $decorationColor;
+      }
+    }
+    &.travel {
+      background: url("img/travel-category.png") no-repeat;
+      background-size: 100%;
+      grid-row-start: 1;
+      grid-column-start: 2;
+
+      grid-row-end: 2;
+      grid-column-end: 3;
+
+      &:hover {
+        background: url("img/travel-category_hover.png") no-repeat;
+        background-size: 100%;
+      }
+    }
+
+    &.culinary {
+      background: url("img/culinary-category.png") no-repeat;
+      background-size: 100%;
+      grid-row-start: 2;
+      grid-column-start: 1;
+
+      grid-row-end: 3;
+      grid-column-end: 2;
+
+      &:hover {
+        background: url("img/culinary-category_hover.png") no-repeat;
+        background-size: 100%;
+      }
+    }
+
+    &.creativity {
+      background: url("img/creativity-category.png") no-repeat;
+      background-size: 100%;
+      grid-row-start: 3;
+      grid-column-start: 2;
+
+      grid-row-end: 4;
+      grid-column-end: 3;
+
+      &:hover {
+        background: url("img/creativity-category_hover.png") no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  &__category-name {
+    color: $mainTextColor;
+    font-size: 32px;
+    font-style: oblique;
+  }
+
+  &__stats {
+    margin-top: 50px;
+    font-size: 32px;
+    padding: 50px;
+    display: block;
+    background-color: $backgroundColorDark;
+    border-radius: 20px;
+    color: $mainTextColor;
+    text-align: center;
+  }
+
+  &__stats-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+
+  &__stats-colored {
+    color: $decorationColor;
+    padding: 20px 0px;
+  }
+
+  &__stats-categories {
+    padding-top: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__stats-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+      grid-row-start: 1;
+      grid-column-start: 1;
+
+      grid-row-end: 2;
+      grid-column-end: 2;
+    }
+    &:nth-child(2) {
+      grid-row-start: 1;
+      grid-column-start: 2;
+
+      grid-row-end: 2;
+      grid-column-end: 3;
+    }
+    &:nth-child(3) {
+      grid-row-start: 1;
+      grid-column-start: 3;
+
+      grid-row-end: 2;
+      grid-column-end: 4;
+    }
+    &:nth-child(4) {
+      grid-row-start: 2;
+      grid-column-start: 2;
+
+      grid-row-end: 3;
+      grid-column-end: 3;
+    }
+  }
+
+  &__stats-category-title {
+    font-style: oblique;
+    padding-bottom: 20px;
+  }
+}
+
+.travel-text {
+  padding-top: 20%;
+  padding-left: 50%;
+}
+
+.culinary-text {
+  padding-top: -35%;
+  padding-left: 15%;
+}
+
+.creativity-text {
+  padding-top: 15%;
+  padding-left: 45%;
+}
+
+.main-page-some-statistics {
+  padding-bottom: 100px;
+}

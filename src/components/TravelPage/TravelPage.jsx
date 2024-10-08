@@ -11,12 +11,12 @@ const TravelPage = () => {
   return (
     <>
       <Header />
-      <div className="main-page">
+      <div className="travel-page">
         <div className="container">
-          <section className="main-welcome">
-            <h1 className="main-welcome__heading">Путешествия и места</h1>
-            <div className="main-welcome__description">
-              <div className="main-welvoce_left">
+          <section className="travel-welcome">
+            <h1 className="travel-welcome__heading">Путешествия и места</h1>
+            <div className="travel-welcome__description">
+              <div className="travel-welvoce_left">
                 <div className="train-window">
                   <img
                     src="img/travel-pic.png"
@@ -26,7 +26,7 @@ const TravelPage = () => {
                   <div className="background"></div>
                 </div>
               </div>
-              <div className="main-welcome__right">
+              <div className="travel-welcome__right">
                 Путешествия делают жизнь ярче. Не знаете, куда поехать, или
                 просто хотите вдохновиться историями от наших пользователей?
                 Обязательно почитайте ленту новостей ниже и поделитесь

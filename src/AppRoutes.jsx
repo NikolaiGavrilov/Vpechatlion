@@ -7,6 +7,7 @@ import CulinaryPage from "./components/СulinaryPage/CulinaryPage";
 import CreativityPage from "./components/CreativityPage/CreativityPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import MyProfilePage from "./components/MyProfilePage/MyProfilePage";
+import MainPage from "./components/MainPage/MainPage";
 
 const AppRoutes = () => {
   const { loggedIn, userID } = useSelector((state) => state.loggedIn);
@@ -15,7 +16,7 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TravelPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/travel" element={<TravelPage />} />
         <Route path="/culinary" element={<CulinaryPage />} />
         <Route path="/creativity" element={<CreativityPage />} />
