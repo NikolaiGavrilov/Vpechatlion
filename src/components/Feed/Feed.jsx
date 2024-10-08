@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import FeedPost from "../FeedPost/FeedPost";
+import PostForm from "../PostForm/PostForm"; 
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../redux/actions"; 
 import "./Feed.scss";
 
 const Feed = ({ category }) => {
   const posts = useSelector((state) => state.posts.posts);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const filteredPosts = category
     ? posts.filter((post) => post.category === category)
@@ -18,11 +22,7 @@ const Feed = ({ category }) => {
   const startIndex = (currentPage - 1) * postsPerPage;
 
   const sortedPosts = [...filteredPosts].sort((a, b) => {
-    if (sortOrder === "newest") {
-      return b.id - a.id;
-    } else {
-      return a.id - b.id;
-    }
+    return sortOrder === "newest" ? b.id - a.id : a.id - b.id;
   });
 
   const currentPosts = sortedPosts.slice(startIndex, startIndex + postsPerPage);
@@ -34,12 +34,33 @@ const Feed = ({ category }) => {
   const toggleSortOrder = () => {
     setSortOrder((prevOrder) => (prevOrder === "newest" ? "oldest" : "newest"));
   };
-
+  const { loggedIn, userID } = useSelector((state) => state.loggedIn);
+  const toggleFormOpen = () => setIsFormOpen(true);
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleShareImpressionsClick = () => {
+    if (!loggedIn) {
+      setErrorMessage(
+        "Пожалуйста, авторизуйтесь, чтобы иметь возможность публиковать свой контент"
+      );
+      return;
+    }
+    setIsFormOpen(true);
+    setErrorMessage(""); 
+  };
   return (
     <section className="feed">
       <div className="feed__box">
         <h2 className="feed__heading">Лента впечатлений</h2>
+        <button
+          onClick={handleShareImpressionsClick}
+          className="feed__tell-btn"
+        >
+          <span className="feed__tell-btn-text">Поделиться впечатлением</span>
+        </button>
+        {errorMessage && <div className="feed__tell-error-message">{errorMessage}</div>}
+        {isFormOpen && <PostForm onClose={() => setIsFormOpen(false)} />}
         <button onClick={toggleSortOrder} className="feed__sorting-btn">
+          
           <span className="feed__sorting-text">
             {sortOrder === "newest" ? "Показать старые" : "Показать новые"}
           </span>
@@ -83,3 +104,4 @@ const Feed = ({ category }) => {
 };
 
 export default Feed;
+

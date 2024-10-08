@@ -50,6 +50,26 @@
     }
   }
 
+  &__tell-btn {
+    font-size: 16px;
+    background-color: $backgroundColorLight;
+    border: 1px solid $mainTextColor;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+  }
+
+  &__tell-btn-text {
+    color: $mainTextColor;
+  }
+
+  &__tell-btn:active {
+    border: 1px solid $decorationColor;
+    .feed__tell-btn-text {
+      color: $decorationColor;
+    }
+  }
+
   &__pagination {
     padding: 20px 0px;
   }
@@ -72,5 +92,10 @@
     .feed__pagination-num {
       color: $decorationColor;
     }
+  }
+
+  &__tell-error-message {
+    color: red;
+    padding-bottom: 20px;
   }
 }
