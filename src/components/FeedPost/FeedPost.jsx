@@ -47,7 +47,7 @@ const FeedPost = ({
   const isCurrentUserAuthor = currentUser?.userPosts?.includes(post.id);
 
   return (
-    <div className="feedpost">
+    <article className="feedpost">
       <div className="feedpost__heading" onClick={openModal}>
         <h1>{title}</h1>
       </div>
@@ -103,7 +103,7 @@ const FeedPost = ({
           updateCommentsAmount={updateCommentsAmount}
         />
       )}
-    </div>
+    </article>
   );
 };
 

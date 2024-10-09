@@ -13,13 +13,11 @@ const LoginPage = () => {
   const loggedIn = useSelector((state) => state.loggedIn.loggedIn);
   const dispatch = useDispatch();
 
-
   const [isLogged, setIsLogged] = useState(loggedIn);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMessage("");
-
 
     const user = users.find((user) => user.username === username);
     if (!user) {
@@ -32,12 +30,11 @@ const LoginPage = () => {
       return;
     }
 
-
     dispatch({
       type: "LOGIN_SUCCESS",
-      payload: { userID: user.userID }, 
+      payload: { userID: user.userID },
     });
-    setIsLogged(true); 
+    setIsLogged(true);
     console.log("Успешный вход:", user);
   };
 
@@ -57,7 +54,12 @@ const LoginPage = () => {
                   <h2>Поздравляем, {username}. Вход выполнен.</h2>
                   <Link to="/">
                     {" "}
-                    <button>Перейти на главную страницу</button>
+                    <button className="login-page__btn">
+                      {" "}
+                      <span className="login-page__btn-text">
+                        Перейти на главную страницу
+                      </span>
+                    </button>
                   </Link>
                 </div>
               ) : (
@@ -65,8 +67,9 @@ const LoginPage = () => {
                   <h2>Вход</h2>
                   <form onSubmit={handleSubmit}>
                     <div>
-                      <label htmlFor="username">Логин:</label>
+                      <label htmlFor="username">Логин: &nbsp;</label>
                       <input
+                        className="login-page__input"
                         type="text"
                         id="username"
                         value={username}
@@ -77,6 +80,7 @@ const LoginPage = () => {
                     <div>
                       <label htmlFor="password">Пароль:</label>
                       <input
+                        className="login-page__input"
                         type="password"
                         id="password"
                         value={password}
@@ -87,7 +91,9 @@ const LoginPage = () => {
                     {errorMessage && (
                       <div style={{ color: "red" }}>{errorMessage}</div>
                     )}
-                    <button type="submit">Войти</button>
+                    <button className="login-page__btn" type="submit">
+                      <span className="login-page__btn-text">Войти</span>
+                    </button>
                   </form>
                 </>
               )}

@@ -17,56 +17,61 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/" className="header__logo">
-        <h1 className="header__heading">
-          Впечатл
-          <span style={{ textDecoration: "yellow wavy underline" }}>ион</span>
-        </h1>
-        <img
-          className="header__logo-img"
-          src="img/vpechatlion-logo.png"
-          alt=""
-        />
-      </Link>
+      <div className="header-content container">
+        <Link to="/" className="header__logo">
+          <h1 className="header__heading">
+            Впечатл
+            <span style={{ textDecoration: "yellow wavy underline" }}>ион</span>
+          </h1>
+          <img
+            className="header__logo-img"
+            src="img/vpechatlion-logo.png"
+            alt=""
+          />
+        </Link>
 
-      <nav className="header__nav">
-        <Link to="/travel" className="header__link">
-          Путешествия
-          <br /> и места
-        </Link>
-        <Link to="/culinary" className="header__link">
-          Кулинария
-          <br /> и еда
-        </Link>
-        <Link to="/creativity" className="header__link">
-          Творчество
-          <br /> и хобби
-        </Link>
-        {!loggedIn ? (
-          <Link to="/login" className="header__link">
-            Aвторизоваться
+        <nav className="header__nav">
+          <Link to="/travel" className="header__link">
+            Путешествия
+            <br /> и места
           </Link>
-        ) : (
-          <div>
-            <div className="header__user-info">
-              <Link to="/myprofile">
-                <span className="header__username">{currentUser.username}</span>
-              </Link>
-              <Link to="/myprofile">
-                <img src={avatar} alt="Avatar" className="header__avatar" />
+          <Link to="/culinary" className="header__link">
+            Кулинария
+            <br /> и еда
+          </Link>
+          <Link to="/creativity" className="header__link">
+            Творчество
+            <br /> и хобби
+          </Link>
+          
+        </nav>
+        {!loggedIn ? (
+            <Link to="/login" className="header__link">
+              Aвторизоваться
+            </Link>
+          ) : (
+            <div>
+              <div className="header__user-info">
+                <Link to="/myprofile">
+                  <span className="header__username">
+                    {currentUser.username}
+                  </span>
+                </Link>
+                <Link to="/myprofile">
+                  <img src={avatar} alt="Avatar" className="header__avatar" />
+                </Link>
+              </div>
+              <Link
+                to="/"
+                onClick={logOut}
+                className="header__link"
+                style={{ color: "red" }}
+              >
+                Выйти
               </Link>
             </div>
-            <Link
-              to="/"
-              onClick={logOut}
-              className="header__link"
-              style={{ color: "red" }}
-            >
-              Выйти
-            </Link>
-          </div>
-        )}
-      </nav>
+          )}
+      </div>
     </header>
   );
 };

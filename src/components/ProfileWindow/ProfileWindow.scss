@@ -46,3 +46,16 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 940px) {
+  .user-profile {
+    &__avatar {
+      width: 300px;
+      height: 300px;
+    }
+
+    &__close {
+      font-size: 32px;
+    }
+  }
+}

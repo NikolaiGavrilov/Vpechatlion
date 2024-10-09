@@ -182,3 +182,31 @@
     border-radius: 50px;
   }
 }
+@media screen and (max-width: 940px) {
+  .modal-window {
+    &__close {
+      font-size: 32px;
+    }
+
+    &__heading {
+      font-size: 16px;
+    }
+
+    &__author-pic {
+      height: 140px;
+      width: 140px;
+      border-radius: 50px;
+    }
+
+    &__description {
+      padding-top: 20px;
+      font-size: 16px;
+    }
+
+    &__img {
+      margin-left: 0px;
+      width: 80%;
+      border: 1px solid $mainTextColor;
+    }
+  }
+}

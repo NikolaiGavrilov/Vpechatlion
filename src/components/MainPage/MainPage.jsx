@@ -105,8 +105,9 @@ const MainPage = () => {
           </section>
           <section className="main-page-welcome-word">
             <div className="main-page__welcome">
+              <h2>Добро пожаловать!</h2>
               <p>
-                Добро пожаловать! Вы попали на сайт "Впечатлион", социальную
+                Вы попали на сайт "Впечатлион", социальную
                 сеть, миссия которой - обмен впечатлениями между пользователями.
               </p>
               <p>
@@ -119,7 +120,7 @@ const MainPage = () => {
           </section>
           <section className="main-page-some-statistics">
             <div className="main-page__stats">
-              <h2>Немного о нас</h2>
+              <h2 className="main-page__stats-heading">Немного о нас</h2>
               <div className="main-page__stats-categories">
                 <div className="main-page__stats-category">
                   <p className="main-page__stats-category-title">

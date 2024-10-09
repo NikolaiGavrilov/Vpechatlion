@@ -1,0 +1,15 @@
+@mixin page-heading {
+  font-size: 80px;
+  font-weight: 700;
+  color: $decorationColor;
+  text-align: center;
+  text-shadow: 2px 2px 4px $backgroundColorDark;
+}
+
+@mixin page-heading-tablet-mobile {
+  font-size: 40px;
+  font-weight: 700;
+  color: $decorationColor;
+  text-align: center;
+  text-shadow: 2px 2px 4px $backgroundColorDark;
+}

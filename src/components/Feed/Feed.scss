@@ -99,3 +99,14 @@
     padding-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 940px) {
+  .feed {
+    &__sorting-btn {
+      left: 1%;
+      top: 1.5%;
+      margin: 0px 0px;
+      padding: 5px;
+    }
+  }
+}

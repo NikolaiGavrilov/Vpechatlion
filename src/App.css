@@ -4,3 +4,17 @@
   padding-left: calc(50% - 640px);
   padding-right: calc(50% - 640px);
 }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .container {
+    padding-left: calc(50% - 300px);
+    padding-right: calc(50% - 300px);
+  }
+}

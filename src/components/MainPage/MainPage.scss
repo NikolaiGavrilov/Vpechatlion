@@ -1,4 +1,5 @@
 @import "../../_variables.scss";
+@import "../../_mixins.scss";
 .main-page {
   min-height: 100dvh;
   background: url("img/main-bg.jpg") no-repeat;
@@ -8,25 +9,18 @@
   background-size: cover;
 
   &__heading {
-    padding-top: 100px;
-    font-size: 80px;
-    font-weight: 700;
-    background-image: url("img/travel-heading-bg.jpg");
-    background-position: center;
-    background-size: 1200px;
-    background-repeat: repeat;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding-top: 120px;
+    @include page-heading;
   }
+
   &__welcome {
     margin-top: 250px;
     margin-bottom: 50px;
     font-size: 32px;
     padding: 50px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     background-color: $backgroundColorDark;
     border-radius: 20px;
     color: $mainTextColor;
@@ -43,13 +37,14 @@
   &__category-pic {
     width: 700px;
     height: 700px;
-
     transition: transform 2s ease;
+
     &:hover {
       .main-page__category-name {
         color: $decorationColor;
       }
     }
+
     &.travel {
       background: url("img/travel-category.png") no-repeat;
       background-size: 100%;
@@ -117,6 +112,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   &__stats-colored {
@@ -191,4 +187,120 @@
 
 .main-page-some-statistics {
   padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1440px) {
+  .main-page {
+    &__categories {
+      display: grid;
+
+      grid-template-rows: 150px 150px 150px;
+      grid-template-columns: 350px 350px;
+    }
+
+    &__category-pic {
+      width: 600px;
+      height: 600px;
+    }
+
+    &__stats-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .main-page {
+    &__heading {
+      padding-top: 120px;
+      @include page-heading-tablet-mobile;
+      padding-bottom: 50px;
+    }
+
+    &__welcome {
+      font-size: 16px;
+      margin-top: 50px;
+    }
+
+    &__categories {
+      display: grid;
+
+      grid-template-rows: 150px 100px 150px;
+      grid-template-columns: 250px 300px;
+    }
+
+    &__category-pic {
+      width: 350px;
+      height: 350px;
+    }
+
+    &__category-name {
+      color: $mainTextColor;
+      font-size: 16px;
+      font-style: oblique;
+    }
+
+    &__stats-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &__stats-categories {
+      font-size: 16px;
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__stats-category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+      }
+      &:nth-child(2) {
+      }
+      &:nth-child(3) {
+      }
+      &:nth-child(4) {
+      }
+    }
+
+    &__stats-heading {
+      font-size: 32px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .main-page {
+      &__heading {
+        @include page-heading-tablet-mobile;
+        padding-bottom: 50px;
+      }
+
+      &__welcome {
+        margin-top: 50px;
+      }
+
+      &__categories {
+        display: grid;
+
+        grid-template-rows: 150px 150px 150px;
+        grid-template-columns: 80px 180px;
+      }
+
+      &__category-pic {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
 }

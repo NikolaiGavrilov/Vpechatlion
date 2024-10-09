@@ -93,3 +93,74 @@
     }
   }
 }
+
+@media screen and (max-width: 940px) {
+  .feedpost {
+    padding: 5px;
+    &__img {
+      width: 300px;
+      height: 300px;
+      border: 1px solid $mainTextColor;
+      object-fit: cover;
+      cursor: pointer;
+      margin: 10px 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &__preview-text {
+      font-size: 16px;
+      width: 300px;
+    }
+
+    &__interaction-icons {
+      padding-top: 10px;
+      display: flex;
+      gap: 20px;
+    }
+
+    &__interaction-icon {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: $decorationColor;
+        transition: all 0.5s ease;
+      }
+
+      &:active {
+        transform: scale(1.2);
+        transition: all 0.1s ease;
+      }
+    }
+
+    &__likes-number {
+      color: $decorationColor;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &__comments-number {
+      color: $decorationColor;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__delete-button {
+      width: 15px;
+      background-color: none;
+      cursor: pointer;
+
+      &__comment {
+        padding-top: 10px;
+        width: 10px;
+      }
+    }
+  }
+}

@@ -16,10 +16,40 @@
   }
 
   &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 50px;
     text-align: center;
     background-color: $backgroundColorDark;
     color: $mainTextColor;
     border-radius: 20px;
+  }
+
+  &__btn {
+    font-size: 16px;
+    background-color: $backgroundColorLight;
+    border: 1px solid $mainTextColor;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  &__btn-text {
+    color: $mainTextColor;
+  }
+
+  &__btn:active {
+    border: 1px solid $decorationColor;
+    .login-page__btn-text {
+      color: $decorationColor;
+    }
+  }
+
+  &__input {
+    margin-left: 10px;
+    background-color: $backgroundColorLight;
+    color: $mainTextColor;
+    max-width: 70%;
   }
 }
