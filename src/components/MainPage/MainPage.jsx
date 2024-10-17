@@ -94,9 +94,7 @@ const MainPage = () => {
               </Link>
 
               <Link
-                to="/creativity"
-                className="main-page__category-pic creativity"
-              >
+                to="/creativity" className="main-page__category-pic creativity">
                 <h2 className="main-page__category-name creativity-text">
                   Творчество и хобби
                 </h2>
@@ -107,8 +105,8 @@ const MainPage = () => {
             <div className="main-page__welcome">
               <h2>Добро пожаловать!</h2>
               <p>
-                Вы попали на сайт "Впечатлион", социальную
-                сеть, миссия которой - обмен впечатлениями между пользователями.
+                Вы попали на сайт "Впечатлион", социальную сеть, миссия которой
+                - обмен впечатлениями между пользователями.
               </p>
               <p>
                 Для удобства пользователей контент нашего онлайн-сообщества

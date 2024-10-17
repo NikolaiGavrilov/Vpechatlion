@@ -59,10 +59,10 @@ const ModalWindow = ({
       currentUser.userComments.push(newCommentID);
     }
 
-    // Правильное обновление количества комментариев
+  
     const updatedCommentsAmount = commentsAmount + 1;
     setCommentsAmount(updatedCommentsAmount);
-    updateCommentsAmount(updatedCommentsAmount); // Убедитесь, что передаете новое значение
+    updateCommentsAmount(updatedCommentsAmount); 
     setNewComment("");
   };
 
@@ -93,10 +93,10 @@ const ModalWindow = ({
   const handleRemoveComment = (id) => {
     dispatch(removeComment(id));
 
-    // Правильное обновление количества комментариев
+ 
     const updatedCommentsAmount = commentsAmount - 1;
     setCommentsAmount(updatedCommentsAmount);
-    updateCommentsAmount(updatedCommentsAmount); // Убедитесь, что передаете новое значение
+    updateCommentsAmount(updatedCommentsAmount); 
   };
 
   const isCurrentUserPostAuthor = currentUser?.userPosts?.includes(post.id);
@@ -206,7 +206,7 @@ const ModalWindow = ({
                             className="feedpost__delete-button"
                             src="img/delete-icon.svg"
                             alt="иконка корзины"
-                            onClick={() => handleRemoveComment(comment.id)} // Обратите внимание, что нужно передать id комментария
+                            onClick={() => handleRemoveComment(comment.id)} 
                           />
                         )}
                       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/actions";
-import "./PostForm.scss"; // Optional, for styling
+import "./PostForm.scss"; 
 import { useSelector } from "react-redux";
 
 const PostForm = ({ onClose }) => {
