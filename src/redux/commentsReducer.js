@@ -1,5 +1,6 @@
 import { ADD_COMMENT, REMOVE_COMMENT } from "./actions";
 
+//id - идентификатор самого коммента, postId - идентификатор поста, к которому он относится, text - это текстовое содержание
 const initialCommentsState = {
     comments: [{
         id: 1728166961303,

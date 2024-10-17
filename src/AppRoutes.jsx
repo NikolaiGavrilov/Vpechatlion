@@ -9,6 +9,7 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import MyProfilePage from "./components/MyProfilePage/MyProfilePage";
 import MainPage from "./components/MainPage/MainPage";
 
+//Данный компонент нужен, чтоб не перегружать App. Мне показалось логичным выделить маршрутизацию в отдельный компонент и файл, чтоб всё было нагляднее
 const AppRoutes = () => {
   const { loggedIn, userID } = useSelector((state) => state.loggedIn);
   const users = useSelector((state) => state.users.users);
