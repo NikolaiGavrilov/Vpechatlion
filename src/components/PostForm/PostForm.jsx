@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/actions";
-import "./PostForm.scss"; 
+import "./PostForm.scss";
 import { useSelector } from "react-redux";
 
+// Компонент, отвечающий за вызов формы добавления новой публикации вида FeedPost в новостную ленту Feed.
 const PostForm = ({ onClose }) => {
   const users = useSelector((state) => state.users.users);
   const { loggedIn, userID } = useSelector((state) => state.loggedIn);
@@ -15,25 +16,25 @@ const PostForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState(""); 
+  const [category, setCategory] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newPost = {
-      id: Date.now(), 
+      id: Date.now(),
       title,
       description,
-      imgPath: [], 
+      imgPath: [],
       likes: 0,
       youLiked: false,
       commentIDs: [],
-      category, 
+      category,
     };
     dispatch(addPost(newPost));
     currentUsersPosts.push(newPost.id);
     console.log(currentUsersPosts);
-    setCurrentUsersPosts(); 
-    onClose(); 
+    setCurrentUsersPosts();
+    onClose();
   };
 
   return (

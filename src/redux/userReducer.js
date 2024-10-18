@@ -65,6 +65,8 @@ const initialUserState = {
     ]
 };
 
+//Пока не используемые действия по добавлению и удалению пользователя, потребуются при
+// введении функционала по регистрации и удалению пользователем самого себя через личный кабинет
 const userReducer = (state = initialUserState, action) => {
     switch (action.type) {
         case ADD_USER:

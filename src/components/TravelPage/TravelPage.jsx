@@ -3,9 +3,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Feed from "../Feed/Feed";
 
+// Страница тематического раздела "Путешествия и места" с новостной лентой по данной категории (фильтруется внутри компонента Feed по категории Travel)
 const TravelPage = () => {
-
-
   return (
     <>
       <Header />

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import FeedPost from "../FeedPost/FeedPost";
-import PostForm from "../PostForm/PostForm"; 
+import PostForm from "../PostForm/PostForm";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addPost } from "../../redux/actions"; 
+import { addPost } from "../../redux/actions";
 import "./Feed.scss";
 
+// Компонент новостной ленты, в который передается категория (по ней осуществляется фильтрация на страницах с разными тематическими разделами). Реализован функционал сортировки по дате публикации от новых постов к старым и наоборот, реализована пагинация с указанием номеров страниц (на каждой странице по умолчанию 6 постов). Содержит в себе сортируемые и фильтруемые компоненты FeedPost и форму добавления поста - компонент PostForm (только у авторизованных пользователей).
 const Feed = ({ category }) => {
   const posts = useSelector((state) => state.posts.posts);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -45,8 +46,9 @@ const Feed = ({ category }) => {
       return;
     }
     setIsFormOpen(true);
-    setErrorMessage(""); 
+    setErrorMessage("");
   };
+
   return (
     <section className="feed">
       <div className="feed__box">
@@ -57,10 +59,11 @@ const Feed = ({ category }) => {
         >
           <span className="feed__tell-btn-text">Поделиться впечатлением</span>
         </button>
-        {errorMessage && <div className="feed__tell-error-message">{errorMessage}</div>}
+        {errorMessage && (
+          <div className="feed__tell-error-message">{errorMessage}</div>
+        )}
         {isFormOpen && <PostForm onClose={() => setIsFormOpen(false)} />}
         <button onClick={toggleSortOrder} className="feed__sorting-btn">
-          
           <span className="feed__sorting-text">
             {sortOrder === "newest" ? "Показать старые" : "Показать новые"}
           </span>
@@ -104,4 +107,3 @@ const Feed = ({ category }) => {
 };
 
 export default Feed;
-

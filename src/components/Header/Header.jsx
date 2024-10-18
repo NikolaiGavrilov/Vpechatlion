@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/actions";
 import "./Header.scss";
 
+// Хедер сайта. Содержит лого и навигационные ссылки на разделы, а также ссылку на авторизацию. В случае, если пользователь уже авторизован, вместо ссылки авторизации представляет краткую информацию о пользователе (аватар, имя пользователя) и содержит ссылку на выход из учетной записи.
 const Header = () => {
   const dispatch = useDispatch();
   const { loggedIn, userID } = useSelector((state) => state.loggedIn);
@@ -50,7 +51,7 @@ const Header = () => {
               Aвторизоваться
             </Link>
           ) : (
-            <div>
+            <div className="header__user-block">
               <div className="header__user-info">
                 <Link to="/myprofile">
                   <span className="header__username">

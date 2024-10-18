@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+// Главная страница сайта "Впечатлион". Кратко излагает концепцию этой социальной сети, представляет пользователю существующие категории, оформленные с использованием созданных в Stable Diffusion изображений и анимации. В нижней части приводит некоторую статистику о пользователях, постах и категориях. 
 const MainPage = () => {
   const comments = useSelector((state) => state.comments.comments);
   const users = useSelector((state) => state.users.users);

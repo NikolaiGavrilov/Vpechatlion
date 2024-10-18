@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import "./LoginPage.scss";
 
+// Страница авторизации. По содержанию ограничивается формой для входа на сайт. Осуществляет проверку данных и информирует пользователя, если совершена ошибка во введенных данных. Если данные введены верно, поздравляет с этим авторизовавшегося пользователя и предлагает ему перейти на главную страницу.
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

@@ -1,5 +1,6 @@
 import "./Footer.scss";
 
+// Футер сайта, по содержанию ограничивается контактными данными.
 const Footer = () => {
   return (
     <footer className="footer container">

@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import Feed from "../Feed/Feed";
 import "./CreativityPage.scss";
 
+// Страница тематического раздела "Творчество и хобби" с новостной лентой по данной категории (фильтруется внутри компонента Feed по категории Creativity)
 const CreativityPage = () => {
   return (
     <>

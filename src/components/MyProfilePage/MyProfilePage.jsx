@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./MyProfilePage.scss";
 
+// Страница с личным профилем авторизованного пользователя. Содержит информацию о нем, его достижениях на сайте, его постах и комментариях. В будущем страница будет дополнена возможностью редактирования информации в профиле, удаления профиля, персонализации оформления профиля и другими функциями. Переход на страницу возможен по клику на аватар текущего пользователя в хедере (появляется у авторизованных пользователей).
 const MyProfilePage = ({ user }) => {
   const comments = useSelector((state) => state.comments.comments);
   const posts = useSelector((state) => state.posts.posts);
@@ -45,7 +46,9 @@ const MyProfilePage = ({ user }) => {
                         </span>
                       </li>
                     ) : (
-                      <li key={postId}>Пост №{postId} не обнаружен и вероятно был удалён.</li>
+                      <li key={postId}>
+                        Пост №{postId} не обнаружен и вероятно был удалён.
+                      </li>
                     );
                   })
                 ) : (

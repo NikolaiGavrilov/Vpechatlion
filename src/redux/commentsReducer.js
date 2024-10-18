@@ -175,6 +175,7 @@ const initialCommentsState = {
     ]
 };
 
+// Действия по добавлению и удалению комментария
 const commentsReducer = (state = initialCommentsState, action) => {
     switch (action.type) {
         case ADD_COMMENT:

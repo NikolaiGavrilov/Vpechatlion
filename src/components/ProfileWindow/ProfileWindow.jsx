@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./ProfileWindow.scss";
 
+// Компонент, отвечающий за второе модальное окно с профилем пользователя, в который мы переходим из первого модального окна ModalWindow, кликнув по аватару автора поста или автора комментария. Представляет пользователю информацию о выбранном участнике соцсети "Впечатлион".
 const ProfileWindow = ({ profileID, setProfileWindowOpen }) => {
   const users = useSelector((state) => state.users.users);
   const comments = useSelector((state) => state.comments.comments);

@@ -328,6 +328,8 @@ const initialState = {
     ]
 };
 
+//Действия по обновлению, добавлению и удалению поста, а также по переключению состояния лайка 
+// (поставлен ли текущим пользователем или нет)
 const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_POST:

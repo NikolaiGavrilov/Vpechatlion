@@ -4,6 +4,7 @@ import { toggleLike, deletePost } from "../../redux/actions";
 import React, { useState } from "react";
 import ModalWindow from "../ModalWindow/ModalWindow";
 
+// Компонент поста в ленте с кратким содержанием. Помимо ознакомления с информацией есть возможность поставить или убрать лайк под этим постом, удалить его, если он принадлежит пользователю, с аккаунта которого выполнен вход. Предусмотрена возможность открытия модального окна ModalWindow с полным содержанием поста и расширенным функционалом.
 const FeedPost = ({
   id,
   title,
