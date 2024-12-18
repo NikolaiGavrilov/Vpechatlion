@@ -5,7 +5,8 @@ import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-// Главная страница сайта "Впечатлион". Кратко излагает концепцию этой социальной сети, представляет пользователю существующие категории, оформленные с использованием созданных в Stable Diffusion изображений и анимации. В нижней части приводит некоторую статистику о пользователях, постах и категориях. 
+
+// Главная страница сайта "Впечатлион". Кратко излагает концепцию этой социальной сети, представляет пользователю существующие категории, оформленные с использованием созданных в Stable Diffusion изображений и анимации. В нижней части приводит некоторую статистику о пользователях, постах и категориях.
 const MainPage = () => {
   const comments = useSelector((state) => state.comments.comments);
   const users = useSelector((state) => state.users.users);
@@ -75,6 +76,7 @@ const MainPage = () => {
   return (
     <>
       <Header />
+
       <div className="main-page">
         <div className="container">
           <section className="main-page-categories-content">
@@ -95,7 +97,9 @@ const MainPage = () => {
               </Link>
 
               <Link
-                to="/creativity" className="main-page__category-pic creativity">
+                to="/creativity"
+                className="main-page__category-pic creativity"
+              >
                 <h2 className="main-page__category-name creativity-text">
                   Творчество и хобби
                 </h2>
@@ -129,7 +133,8 @@ const MainPage = () => {
                     <img
                       className="main-page__stats-img"
                       src={topPostAuthor.avatar}
-                      alt=""
+                      alt="аватар топового пользователя"
+                      loading="lazy"
                     />
                     <p className="main-page__stats-colored">
                       {topPostAuthor.username}
@@ -145,7 +150,8 @@ const MainPage = () => {
                     <img
                       className="main-page__stats-img"
                       src={topCommentAuthor.avatar}
-                      alt=""
+                      alt="аватар топового комментера"
+                      loading="lazy"
                     />
                     <p className="main-page__stats-colored">
                       {topCommentAuthor.username}
@@ -164,7 +170,8 @@ const MainPage = () => {
                     <img
                       className="main-page__stats-img"
                       src={topLikedPost.imgPath[0]}
-                      alt=""
+                      alt="фото самого популярного поста"
+                      loading="lazy"
                     />
                     <p className="main-page__stats-colored">
                       {topLikedPost.title}

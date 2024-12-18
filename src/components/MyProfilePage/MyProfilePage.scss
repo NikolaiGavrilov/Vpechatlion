@@ -1,7 +1,7 @@
 @import "../../_variables.scss";
 .my-profile {
   min-height: 100dvh;
-  background: url("img/main-bg.jpg") no-repeat;
+  background-image: url("img/main-bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;

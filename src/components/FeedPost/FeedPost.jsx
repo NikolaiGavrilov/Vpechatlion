@@ -55,8 +55,9 @@ const FeedPost = ({
       <img
         className="feedpost__img"
         src={imgPath[0]}
-        alt=""
+        alt="фото поста"
         onClick={openModal}
+        loading="lazy"
       />
       <p className="feedpost__preview-text">
         {description.split(" ").slice(0, 12).join(" ")} ...
@@ -68,15 +69,17 @@ const FeedPost = ({
             onClick={toggleIsLiked}
             className="feedpost__interaction-icon"
             src={youLiked ? "img/like-added.svg" : "img/like-empty.svg"}
-            alt=""
+            alt="лайк"
+            loading="lazy"
           />
         </div>
         <div className="feedpost__comments-number">
           <img
             className="feedpost__interaction-icon"
             src="img/comment.svg"
-            alt=""
+            alt="коммент"
             onClick={openModal}
+            loading="lazy"
           />
           <span>{commentsAmount}</span>
         </div>
@@ -86,6 +89,7 @@ const FeedPost = ({
             src="img/delete-icon.svg"
             alt="иконка корзины"
             onClick={handleDeletePost}
+            loading="lazy"
           />
         )}
       </div>

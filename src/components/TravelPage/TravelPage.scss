@@ -2,7 +2,7 @@
 @import "../../_mixins.scss";
 .travel-page {
   min-height: 100dvh;
-  background: url("img/travel-bg.jpg") no-repeat;
+  background-image: url("img/travel-bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;

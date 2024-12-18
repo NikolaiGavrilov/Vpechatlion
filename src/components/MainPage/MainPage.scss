@@ -2,7 +2,7 @@
 @import "../../_mixins.scss";
 .main-page {
   min-height: 100dvh;
-  background: url("img/main-bg.jpg") no-repeat;
+  background-image: url("img/main-bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -45,44 +45,50 @@
     }
 
     &.travel {
-      background: url("img/travel-category.png") no-repeat;
-      background-size: 100%;
+      background-image: url("img/travel-category.png");
+      background-size: contain;
+      background-repeat: no-repeat;
       grid-row-start: 1;
       grid-column-start: 2;
       grid-row-end: 2;
       grid-column-end: 3;
 
       &:hover {
-        background: url("img/travel-category_hover.png") no-repeat;
-        background-size: 100%;
+        background-image: url("img/travel-category_hover.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
 
     &.culinary {
-      background: url("img/culinary-category.png") no-repeat;
-      background-size: 100%;
+      background-image: url("img/culinary-category.png");
+      background-size: contain;
+      background-repeat: no-repeat;
       grid-row-start: 2;
       grid-column-start: 1;
       grid-row-end: 3;
       grid-column-end: 2;
 
       &:hover {
-        background: url("img/culinary-category_hover.png") no-repeat;
-        background-size: 100%;
+        background-image: url("img/culinary-category_hover.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
 
     &.creativity {
-      background: url("img/creativity-category.png") no-repeat;
-      background-size: 100%;
+      background-image: url("img/creativity-category.png");
+      background-size: contain;
+      background-repeat: no-repeat;
       grid-row-start: 3;
       grid-column-start: 2;
       grid-row-end: 4;
       grid-column-end: 3;
 
       &:hover {
-        background: url("img/creativity-category_hover.png") no-repeat;
-        background-size: 100%;
+        background-image: url("img/creativity-category_hover.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
   }

@@ -2,7 +2,7 @@
 @import "../../_mixins.scss";
 .culinary-page {
   min-height: 100dvh;
-  background: url("img/culinary-bg.jpg") no-repeat;
+  background-image: url("img/culinary-bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
